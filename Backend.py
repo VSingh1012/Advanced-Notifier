@@ -51,8 +51,6 @@ class BackendWorker:
 
         todays_date = dt.date.today()
 
-        # file = filedialog.askopenfilename()
-
         # Creating an instance of the dataframe for the use in the function and the new instance of the Editing Window constructor
         
         df = pd.read_csv(self.file)
@@ -73,8 +71,6 @@ class BackendWorker:
 
         dos_rows = list(df.iloc[:len(df), all_columns.index("DOS")])
 
-        # print(dos_rows)
-
         name_rows = list(df.iloc[:len(df), all_columns.index("Patient")])
 
         for x in range(len(status_rows)):
@@ -86,8 +82,6 @@ class BackendWorker:
             # Arranging the dates based on their location in the DOS row values
 
             split_dates = str(dos_rows[x]).split('/')
-
-            # print(split_dates[1])
 
             new_days[x] = int(split_dates[1])
 
