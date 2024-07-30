@@ -32,8 +32,6 @@ class CSVWin:
             patient_input.delete(0, tk.END)
             MFR_input.delete(0, tk.END)
             model_input.delete(0, tk.END)
-            # number_input.delete(0, tk.END)
-            # status_input.delete(0, tk.END)
 
             new_data = {
                 "DOS": DOS, 
