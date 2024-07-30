@@ -21,8 +21,9 @@ class BackendWorker:
 
         def send_email_reminder(client_name, client_date, warranty_num):
 
-            YOUR_GOOGLE_EMAIL = 'myexcelbot@gmail.com'  # The email you setup to send the email using app password
-            YOUR_GOOGLE_EMAIL_APP_PASSWORD = 'wlif huof ivqq qyfg'  # The app password you generated
+            YOUR_GOOGLE_EMAIL = '********************'  # The email you setup to send the email using app password (blurred out for privacy) 
+            YOUR_GOOGLE_EMAIL_APP_PASSWORD = '**** **** **** ****'  # The app password you generated (blurred out for privacy)
+            
 
             smtpserver = smtplib.SMTP_SSL('smtp.gmail.com', 465)
             smtpserver.ehlo()
@@ -30,7 +31,7 @@ class BackendWorker:
 
             # Test send mail
             sent_from = YOUR_GOOGLE_EMAIL
-            sent_to = "smitasomne@gmail.com"  #  Send it to self (as test)
+            sent_to = "********************"  #  Email to send reminder to (blurred out for privacy)
             message = f"Please alert your client so and take action as soon as possible! \n\nTheir date of service was {client_date} and it is nearing the end of their {warranty_num} year warranty!"
             subject = f"Your client, {client_name}, has a warranty that is near expiration!"
 
@@ -50,11 +51,10 @@ class BackendWorker:
 
         todays_date = dt.date.today()
 
-        # todays_date = str(dt.datetime(2024, 8, 13)).split(' ')[0]
-
         # file = filedialog.askopenfilename()
 
         # Creating an instance of the dataframe for the use in the function and the new instance of the Editing Window constructor
+        
         df = pd.read_csv(self.file)
 
         warranty_year_values = [0] * len(df)
@@ -108,7 +108,7 @@ class BackendWorker:
             formatted_date = new_date.strftime("%Y-%m-%d").split(' ')[0]
 
             new_dates[x] = formatted_date
-            # print(formatted_date)
+            
 
         for i in range(len(new_dates)):
 
